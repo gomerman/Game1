@@ -15,6 +15,11 @@ namespace Game1
         public int damage { get; private set; }
         public Texture2D textureEnemy { get; set; }
 
+        public Rectangle rectangle { get
+            {
+                return new Rectangle((int)X, (int)Y, textureEnemy.Width, textureEnemy.Height);
+            }
+        }
         public Enemy(float _x, float _y)
         {
             hp = 10;

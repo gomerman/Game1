@@ -5,9 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 namespace Game1
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
+  
     public class Game1 : Game
     {
         //static public int characterType;
@@ -83,11 +81,12 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
             touches = TouchPanel.GetState();
+            
             if (touches.Count == 1)
             {
-                player.aimPosition = touches[0].Position - (new Vector2(player.textureAim.Width, player.textureAim.Height) / 2);
+                
+                player.shot(touches, ref (enemysList));
             }
-
 
             base.Update(gameTime);
         }
