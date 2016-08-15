@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:gravity="center">
+    <TableRow
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/tableRow1"
+        android:gravity="center_horizontal">
+        <ImageButton
+            android:src="@drawable/cyborgIco"
+            android:layout_column="1"
+            android:id="@+id/garry_button" />
+        <ImageButton
+            android:src="@drawable/garryIco"
+            android:id="@+id/wizard_button" />
+        <ImageButton
+            android:src="@drawable/wizardIco"
+            android:id="@+id/cyborg_button" />
+    </TableRow>
+    <TableRow
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/tableRow2"
+        android:gravity="center_horizontal">
+        <TextView
+            android:text="Garry"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_column="1"
+            android:id="@+id/textView7" />
+        <TextView
+            android:text="Wizard"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView8" />
+        <TextView
+            android:text="Cyborg"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView9" />
+    </TableRow>
+</TableLayout>
