@@ -12,17 +12,23 @@ namespace Game1
         public int hp { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
-        public int damage { get; private set; }
-        public float attackSpeed { get; private set; } // One attack in N sec
-        public float attackDelay { get; set; }
         public Texture2D textureEnemy { get; set; }
 
         public Color color_of_attack_info;
-        public Rectangle rectangle { get
+        public Rectangle rectangle
+        {
+            get
             {
                 return new Rectangle((int)X, (int)Y, textureEnemy.Width, textureEnemy.Height);
             }
         }
+
+        private int damage { get; set; }
+        private float attackSpeed { get; set; } // One attack in N sec
+        private float attackDelay { get; set; }
+        private string enemy_shot_str = "PIU-PIU!!!";
+
+
         public Enemy(float _x, float _y)
         {
             System.Random rand = new System.Random();
@@ -36,11 +42,29 @@ namespace Game1
             color_of_attack_info = Color.Green;
             color_of_attack_info.A = 0;
         }
-        public void makeVisibleFont()
+
+        public void Update(GameTime gameTime)
+        {
+            attackDelay -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (attackDelay <= 0)
+            {
+                TestPlayer.hp -= damage;
+                attackDelay = attackSpeed;
+                makeVisibleFont();
+            }
+            if (attackDelay <= attackSpeed - 1.5)
+                makeInvisibleFont();
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(textureEnemy, new Vector2(X, Y));
+            spriteBatch.DrawString(Game1.generalFont, enemy_shot_str, new Vector2(X, Y), color_of_attack_info);
+        }
+        private void makeVisibleFont()
         {
             color_of_attack_info.A = 255;
         }
-        public void makeInvisibleFont()
+        private void makeInvisibleFont()
         {
             color_of_attack_info.A = 0;
         }

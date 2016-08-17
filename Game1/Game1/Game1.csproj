@@ -100,13 +100,19 @@
     <AndroidResource Include="Resources\Drawable\garryIco.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\aim.png" />
+    <AndroidAsset Include="Assets\Content\aim.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\enemy.png" />
+    <AndroidAsset Include="Assets\Content\enemy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\BackgroundBar.png" />
+    <AndroidAsset Include="Assets\Content\BackgroundBar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
