@@ -1,10 +1,6 @@
-using System;
-using System.Globalization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Android.Content;
-using Java.Util;
+
 namespace Game1
 {
     public class Enemy
@@ -43,16 +39,16 @@ namespace Game1
             color_of_attack_info.A = 0;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(float elapsedTime)
         {
-            attackDelay -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            attackDelay -= elapsedTime;
             if (attackDelay <= 0)
             {
                 TestPlayer.hp -= damage;
                 attackDelay = attackSpeed;
                 makeVisibleFont();
             }
-            if (attackDelay <= attackSpeed - 1.5)
+            if (attackDelay <= attackSpeed - 1)
                 makeInvisibleFont();
         }
         public void Draw(SpriteBatch spriteBatch)

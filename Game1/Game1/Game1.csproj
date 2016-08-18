@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameButton.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="StartActity.cs" />
     <Compile Include="Game1.cs" />
@@ -111,6 +112,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\BackgroundBar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\pause.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
   </ItemGroup>
